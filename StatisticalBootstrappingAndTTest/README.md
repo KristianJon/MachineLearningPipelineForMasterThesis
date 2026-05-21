@@ -1,15 +1,6 @@
 # Overview of folder and its structure
-This folder contains four subfolders:
 
-1. DataPreprocessing
-	- Contains one Python script ("FetchTilesAndConvertFromGeoJSONToYOLO") that fetches all the patches from a WSI that contains annotations and converts from .geoJSON-formet to YOLO-format for the annotations
-
-2. ResultsFromYOLOModels
-	- This folder further consists of three new folders ("YOLOv10", "YOLOv11", "YOLOv12") that contains the results obtained from model training through Ultralytics. 
-	- Each of the previously mentioned folders contains results from the different patch sizes (320x320, 640x640, 1280x1280)
-	- The model weights can be found in the folder called "weights", both .pt and .torchscript models are available (.torchscript models are required for the developed QuPath-extension)
-
-3. StatisticalBootstrappingAndTTest
+1. StatisticalBootstrappingAndTTest
 	- Contains in total 8 files and 1 folder:
 		- "Dataset" -> "labels" -> "test"
 			- This folder contains all the ground truth annotation labels and is included so that the bootstrapping code can be executed properly 
@@ -42,11 +33,6 @@ This folder contains four subfolders:
 
 		- "TTestOnBootstrappedData.ipynb"
 			- Python code used to perform t-test based on the bootstrapped data saved in the file "bootstrapResults.json"
-
-
-5. TrainingYOLOModel
-	- This folder contains only one file ("trainModelOnAnnotations.py") and it has been used to load a .pt-file and then perform training based on the parameters defined
-	- After training the model, the output and results will be saved and can be viewed for each model under the folders described in "2. ResultsFromYOLOModels"
 
 # How to run the files
 
